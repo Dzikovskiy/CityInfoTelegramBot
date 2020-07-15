@@ -3,8 +3,10 @@
 Telegram bot that response with a description of the city by the given city name. 
 
 Name in **telegram**: @CitySightsBot
+
+
  
- Bot deployed on Heroku. 
+ Bot deployed on Heroku. Available cities in database: Минск, Киев, Вильнюс 
  
  
  ### Rest api
