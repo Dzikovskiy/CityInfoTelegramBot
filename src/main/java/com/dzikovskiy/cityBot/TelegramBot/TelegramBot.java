@@ -45,38 +45,52 @@ public class TelegramBot extends TelegramWebhookBot {
     public BotApiMethod<?> onWebhookUpdateReceived(Update update) {
         Message message = update.getMessage();
         if (message != null && message.hasText()) {
+
+            SendMessage sendMessage = new SendMessage();
+            sendMessage.enableMarkdown(true);
+            sendMessage.setChatId(message.getChatId().toString());
+            sendMessage.setReplyToMessageId(message.getMessageId());
+
+
             switch (message.getText()) {
                 case "/start":
-                    sendMsg(message, "Введите название города, чтобы узнать интересные места: ");
-                    break;
+                    sendMessage.setText("Введите название города, чтобы узнать интересные места: ");
+                    //sendMsg(message, "Введите название города, чтобы узнать интересные места: ");
+                    return sendMessage;
+                 //   break;
                 default:
                     if (isCityExists(message.getText())) {
                         try {
                             City city = cityRepository.findByName(message.getText());
-                            sendMsg(message, "В " + city.getName() + ":\n" + city.getCitySights());
+                            sendMessage.setText("В " + city.getName() + ":\n" + city.getCitySights());
+                            //sendMsg(message, "В " + city.getName() + ":\n" + city.getCitySights());
+                            return sendMessage;
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
                     } else {
-                        sendMsg(message, "Про такой город я ещё не знаю.");
+                        sendMessage.setText("Про такой город я ещё не знаю.");
+                        //sendMsg(message, "Введите название города, чтобы узнать интересные места: ");
+                        return sendMessage;
+                        //sendMsg(message, "Про такой город я ещё не знаю.");
                     }
             }
         }
         return null;
     }
 
-    private void sendMsg(Message message, String s) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.enableMarkdown(true);
-        sendMessage.setChatId(message.getChatId().toString());
-        sendMessage.setReplyToMessageId(message.getMessageId());
-        sendMessage.setText(s);
-        try {
-            execute(sendMessage);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void sendMsg(Message message, String s) {
+//        SendMessage sendMessage = new SendMessage();
+//        sendMessage.enableMarkdown(true);
+//        sendMessage.setChatId(message.getChatId().toString());
+//        sendMessage.setReplyToMessageId(message.getMessageId());
+//        sendMessage.setText(s);
+//        try {
+//            execute(sendMessage);
+//        } catch (TelegramApiException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private boolean isCityExists(String cityName) {
         City city = cityRepository.findByName(cityName);
