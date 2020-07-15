@@ -9,6 +9,8 @@ public class City {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
+    @Column(length = 1500)
     private String citySights;
 
     public Long getId() {
