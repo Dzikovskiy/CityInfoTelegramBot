@@ -3,6 +3,7 @@
 Telegram bot that response with a description of the city by the given city name. 
 
 Name in **telegram**: @CitySightsBot
+
 Token: 1060467825:AAHKijTwsSVXWh28cPwumguQUlKKkVLkowM
 
  
