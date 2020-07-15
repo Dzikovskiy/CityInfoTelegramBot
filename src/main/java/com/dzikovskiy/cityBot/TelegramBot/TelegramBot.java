@@ -38,7 +38,7 @@ public class TelegramBot extends TelegramWebhookBot {
 
     @Override
     public String getBotPath() {
-        return "/";
+        return botName;
     }
 
     @Override
