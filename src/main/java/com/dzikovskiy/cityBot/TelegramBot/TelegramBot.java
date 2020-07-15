@@ -57,7 +57,7 @@ public class TelegramBot extends TelegramWebhookBot {
                     if (isCityExists(message.getText())) {
                         try {
                             City city = cityRepository.findByName(message.getText());
-                            sendMessage.setText("В " + city.getName() + ":\n" + city.getCitySights());
+                            sendMessage.setText("В " + city.getName() + ":\n\n" + city.getCitySights());
 
                             return sendMessage;
                         } catch (Exception e) {
