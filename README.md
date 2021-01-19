@@ -15,9 +15,9 @@ Link: https://teleg.run/CitySightsBot
  
  Supported commands:
  
- To get all cities use: GET https://city-sights-bot.herokuapp.com/api/city
+ To get all cities use: GET ```https://city-sights-bot.herokuapp.com/api/city```
  
- To add new city: POST https://city-sights-bot.herokuapp.com/api/city 
+ To add new city: POST ```https://city-sights-bot.herokuapp.com/api/city``` 
  ```
  {
 	"name":"City name",
@@ -25,14 +25,14 @@ Link: https://teleg.run/CitySightsBot
 }
  ```
  
- To update city: PUT https://city-sights-bot.herokuapp.com/api/city/{id}
+ To update city: PUT ```https://city-sights-bot.herokuapp.com/api/city/{id}```
  ```
  {
 	"name":"City name",
 	"citySights": "Description"
 }
  ```
- To delete city: DELETE https://city-sights-bot.herokuapp.com/api/city/{id}
+ To delete city: DELETE ```https://city-sights-bot.herokuapp.com/api/city/{id}```
  
  ### How to edit and run on your pc
  
