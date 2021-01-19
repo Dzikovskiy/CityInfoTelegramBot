@@ -1,4 +1,4 @@
-package com.dzikovskiy.cityBot;
+package com.dzikovskiy.citybot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

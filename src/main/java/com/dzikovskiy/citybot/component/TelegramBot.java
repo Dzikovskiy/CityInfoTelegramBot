@@ -1,7 +1,7 @@
-package com.dzikovskiy.cityBot.TelegramBot;
+package com.dzikovskiy.citybot.component;
 
-import com.dzikovskiy.cityBot.Entities.City;
-import com.dzikovskiy.cityBot.Repository.CityRepository;
+import com.dzikovskiy.citybot.entity.City;
+import com.dzikovskiy.citybot.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -15,7 +15,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 public class TelegramBot extends TelegramWebhookBot {
 
     @Autowired
-    public CityRepository cityRepository;
+    private CityRepository cityRepository;
 
     @Value("${telegrambot.userName}")
     private String botName;

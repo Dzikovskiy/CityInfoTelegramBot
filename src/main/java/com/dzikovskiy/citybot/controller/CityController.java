@@ -1,7 +1,7 @@
-package com.dzikovskiy.cityBot.Controller;
+package com.dzikovskiy.citybot.controller;
 
-import com.dzikovskiy.cityBot.Entities.City;
-import com.dzikovskiy.cityBot.Repository.CityRepository;
+import com.dzikovskiy.citybot.entity.City;
+import com.dzikovskiy.citybot.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +11,14 @@ import java.util.List;
 @RequestMapping("/api")
 public class CityController {
 
-    @Autowired
-    public CityRepository cityRepository;
+    private final CityRepository cityRepository;
 
-    @GetMapping("/cities")
+    @Autowired
+    public CityController(CityRepository cityRepository) {
+        this.cityRepository = cityRepository;
+    }
+
+    @GetMapping("/city")
     public List<City> getAllCities() {
         return cityRepository.findAll();
     }
@@ -30,17 +34,13 @@ public class CityController {
     }
 
     @PutMapping("/city/{id}")
-    public City editCity(@PathVariable long id, @RequestBody City city) {
+    public void editCity(@PathVariable long id, @RequestBody City city) {
         City cityDb = cityRepository.findById(id);
-        if (city.getName() != null) {
-            cityDb.setName(city.getName());
-        }
-        if (city.getCitySights() != null) {
-            cityDb.setCitySights(city.getCitySights());
-        }
-        cityRepository.save(cityDb);
 
-        return cityDb;
+        cityDb.setName(city.getName());
+        cityDb.setCitySights(city.getCitySights());
+
+        cityRepository.save(cityDb);
     }
 
     @DeleteMapping("/city/{id}")

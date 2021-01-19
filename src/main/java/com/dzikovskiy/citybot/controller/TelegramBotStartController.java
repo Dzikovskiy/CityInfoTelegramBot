@@ -1,7 +1,7 @@
-package com.dzikovskiy.cityBot.Controller;
+package com.dzikovskiy.citybot.controller;
 
 
-import com.dzikovskiy.cityBot.TelegramBot.TelegramBot;
+import com.dzikovskiy.citybot.component.TelegramBot;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
