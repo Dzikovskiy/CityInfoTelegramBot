@@ -8,7 +8,7 @@ Token: 1060467825:AAHKijTwsSVXWh28cPwumguQUlKKkVLkowM
 
 Link: https://teleg.run/CitySightsBot
  
- Bot deployed on Heroku. Available cities in database: Минск, Киев, Вильнюс 
+ Bot deployed on Heroku. Available cities in database: Минск, Киев
  
  
  ### Rest api
