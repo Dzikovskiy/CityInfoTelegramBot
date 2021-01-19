@@ -42,14 +42,14 @@ Link: https://teleg.run/CitySightsBot
  
  Write *server.port=5000* in application.properties
  
- Run ngrok with shortcut and you will get web adress like https://822d3ed3fe05.ngrok.io
+ Run ngrok with shortcut and you will get web adress like ```https://822d3ed3fe05.ngrok.io```
  
  Write that adress to *telegrambot.webHookPath* in application.properties (For example: telegrambot.webHookPath=https://822d3ed3fe05.ngrok.io)
  
- Execute in your browser https://api.telegram.org/bot(yourToken)/setWebhook?url= (your url from ngrok)
+ Execute in your browser ```https://api.telegram.org/bot(yourToken)/setWebhook?url=``` (your url from ngrok)
  
  In my case its:
- https://api.telegram.org/bot1060467825:AAHKijTwsSVXWh28cPwumguQUlKKkVLkowM/setWebhook?url=https://822d3ed3fe05.ngrok.io
+ ```https://api.telegram.org/bot1060467825:AAHKijTwsSVXWh28cPwumguQUlKKkVLkowM/setWebhook?url=https://822d3ed3fe05.ngrok.io```
  
  Run spring app
  
