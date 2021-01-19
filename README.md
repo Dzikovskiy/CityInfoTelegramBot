@@ -15,7 +15,7 @@ Link: https://teleg.run/CitySightsBot
  
  Supported commands:
  
- To get all cities use: GET https://city-sights-bot.herokuapp.com/api/cities 
+ To get all cities use: GET https://city-sights-bot.herokuapp.com/api/city
  
  To add new city: POST https://city-sights-bot.herokuapp.com/api/city 
  ```
